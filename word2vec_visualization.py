@@ -1,10 +1,9 @@
-from types import new_class
-import pandas as pd
-import matplotlib.pyplot as plt
-from gensim.models import Word2Vec
-from sklearn.manifold import TSNE
-from matplotlib import font_manager, rc
 import matplotlib as mpl
+import matplotlib.pyplot as plt
+import pandas as pd
+from gensim.models import Word2Vec
+from matplotlib import font_manager, rc
+from sklearn.manifold import TSNE
 
 font_path = "C:/Windows/Fonts/NanumSquareL.ttf"
 font_name = font_manager.FontProperties(fname=font_path).get_name()

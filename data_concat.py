@@ -1,5 +1,6 @@
-import pandas as pd
 from glob import glob
+
+import pandas as pd
 
 files = glob("./data/cleaned_review_*.csv")
 # files = glob("./data/one_sentence_review_*.csv")

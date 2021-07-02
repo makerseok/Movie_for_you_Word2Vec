@@ -1,8 +1,9 @@
-import pandas as pd
-from sklearn.metrics.pairwise import linear_kernel
-from scipy.io import mmwrite, mmread
 import pickle
+
+import pandas as pd
 from gensim.models import Word2Vec
+from scipy.io import mmread, mmwrite
+from sklearn.metrics.pairwise import linear_kernel
 
 df_reviews_one_sentences = pd.read_csv(
     "./data/movie_review_one_sentence_2015-2021.csv", index_col=0
@@ -24,16 +25,6 @@ def getRecommendation(cosine_sim):
     recMovieList = df_reviews_one_sentences.iloc[movieidx]
     return recMovieList
 
-
-# movie_idx = df_reviews_one_sentences[df_reviews_one_sentences["titles"] == "기생충 (PARASITE)"].index[
-#     0
-# ]
-# print(df_reviews_one_sentences.iloc[movie_idx])
-
-# # 특정 영화와 전체 영화의 cosine 유사도 구함
-# cosine_sim = linear_kernel(Tfidf_matrix[movie_idx], Tfidf_matrix)  # shape: (1, len(Tfidf_matrix))
-# recommendation = getRecommendation(cosine_sim)
-# print(recommendation)
 
 embedding_model = Word2Vec.load("./models/word2VecModel_2015-2021.model")
 key_word = "토르"
